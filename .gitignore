@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/opentelemetry2/v17/.suo
+/.vs/opentelemetry2/v17/DocumentLayout.json
+/obj/Docker/CachedComposeConfigFilePaths.cache
+/obj/Docker/MergedDockerCompose2.cache
+/.vs/opentelemetry2/FileContentIndex/74c758fa-1135-4c13-8257-adf3ac05033b.vsidx

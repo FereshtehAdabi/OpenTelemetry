@@ -175,7 +175,7 @@ namespace opentelemetry2
 
                     using var client = context.RequestServices.GetRequiredService<IHttpClientFactory>().CreateClient("opentelemetry3");
                     var content = client.GetStringAsync("/weatherforecast");
-                    await context.Response.WriteAsync("hello from project opentelemetry2\n");
+                    await context.Response.WriteAsync("hello from project opentelemetry2, test\n");
                     await context.Response.WriteAsync(await content);
                 });
             });
