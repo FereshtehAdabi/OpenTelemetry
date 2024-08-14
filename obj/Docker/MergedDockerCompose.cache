@@ -1,0 +1,82 @@
+name: dockercompose11992554024204159414
+services:
+  jaeger-all-in-one:
+    image: jaegertracing/all-in-one:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 6831
+        published: "6831"
+        protocol: udp
+      - mode: ingress
+        target: 6832
+        published: "6832"
+        protocol: udp
+      - mode: ingress
+        target: 5778
+        published: "5778"
+        protocol: tcp
+      - mode: ingress
+        target: 16686
+        published: "16686"
+        protocol: tcp
+      - mode: ingress
+        target: 14268
+        published: "14268"
+        protocol: tcp
+      - mode: ingress
+        target: 14269
+        published: "14269"
+        protocol: tcp
+      - mode: ingress
+        target: 14250
+        published: "14250"
+        protocol: tcp
+      - mode: ingress
+        target: 9411
+        published: "9411"
+        protocol: tcp
+      - mode: ingress
+        target: 4317
+        published: "4317"
+        protocol: tcp
+      - mode: ingress
+        target: 4318
+        published: "4318"
+        protocol: tcp
+    restart: always
+  opentelemetry2:
+    build:
+      context: C:\Users\feres\source\repos\opentelemetry2
+      dockerfile: opentelemetry2/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+    image: opentelemetry2
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\feres\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\feres\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose11992554024204159414_default

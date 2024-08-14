@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\opentelemetry2.props" />
+</Project>

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "hzS/zFa9kfZrJ7g3I7szDtSrpUBWahS8GDXWD7cj9Wc=",
+  "Source": "opentelemetry3",
+  "BasePath": "_content/opentelemetry3",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
